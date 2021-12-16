@@ -9,18 +9,26 @@ import Logo from '../Logo';
 import Button from '../Button';
 import Spacer from '../Spacer/Spacer';
 
-const Header = () => {
+const MenuButtons = () => {
   return (
-    <header>
-      <SuperHeader>
-        <Row>
-          <ActionGroup>
+        <>
             <button>
               <Search size={24} />
             </button>
             <button>
               <Menu size={24} />
             </button>
+        </>
+  )
+}
+
+const Header = () => {
+  return (
+    <header>
+      <SuperHeader>
+        <Row>
+          <ActionGroup>
+            <MenuButtons />
           </ActionGroup>
           <ActionGroup>
             <button>
@@ -29,26 +37,18 @@ const Header = () => {
           </ActionGroup>
         </Row>
       </SuperHeader>
-      <MainHeaderLaptop>
-          <ActionGroup>
-            <button>
-              <Search size={24} />
-            </button>
-            <button>
-              <Menu size={24} />
-            </button>
-          </ActionGroup>
+      <MainHeader>
+          <ActionGroupMain>
+            <MenuButtons />
+          </ActionGroupMain>
           <Side />
             <Logo />
           <Side />
           <SubscribeGroup>
             <Button>Subscribe</Button>
-            <SubscribedLink href='#'>Already a subscriber?</SubscribedLink>
+            <SubscribeLink href='#'>Already a subscriber?</SubscribeLink>
           </SubscribeGroup>
-     </MainHeaderLaptop>
-     <MainHeaderMobile>
-       <Logo />
-     </MainHeaderMobile>
+     </MainHeader>
     </header>
   );
 };
@@ -68,8 +68,19 @@ const Row = styled(MaxWidthWrapper)`
 `;
 
 const SubscribeGroup = styled.div`
- align-self: flex-end;
- display: grid;
+  display: none;
+  @media ${QUERIES.laptopAndUp} {
+    align-self: flex-end;
+    display: grid;
+  }
+`;
+
+const SubscribeLink = styled.a`
+  color: black;
+  font-style: italic;
+  text-decoration: underline;
+  justify-self: center;
+  font-size: 0.875rem;
 `;
 
 const Side = styled.div`
@@ -89,33 +100,20 @@ const ActionGroup = styled.div`
   }
 `;
 
-const MainHeaderMobile = styled(MaxWidthWrapper)`
+const ActionGroupMain = styled(ActionGroup)`
+  display: none;
+    @media ${QUERIES.laptopAndUp} {
+     display: flex;
+  }
+`;
+
+const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
-  @media ${QUERIES.laptopAndUp} {
-    display: none;
   }
-`;
-
-const MainHeaderLaptop = styled(MaxWidthWrapper)`
-  display: none;
-   @media ${QUERIES.laptopAndUp} {
-     display: flex;
-    align-items: center;
-    margin-top: 32px;
-    margin-bottom: 48px;
-   }
-`;
-
-const SubscribedLink = styled.a`
-  color: black;
-  font-style: italic;
-  text-decoration: underline;
-  justify-self: center;
-  font-size: 0.875rem;
 `;
 
 export default Header;
