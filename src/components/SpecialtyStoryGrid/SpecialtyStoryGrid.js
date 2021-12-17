@@ -48,6 +48,15 @@ const SpecialtyStoryGrid = () => {
 const Wrapper = styled.div`
   display: grid;
   gap: 48px;
+  @media ${QUERIES.desktopAndUp} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    > :first-child {
+      padding-right: 18px;
+      margin-right: 18px;
+      border-right: 1px solid var(--color-gray-300);
+    }
+  }
 `;
 
 const MarketsSection = styled.section``;
@@ -61,7 +70,6 @@ const MarketCards = styled.div`
 
 const SportsSection = styled.section`
   display: grid;
-
 `;
 
 const SportsStories = styled.div`
