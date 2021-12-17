@@ -27,7 +27,7 @@ const Link = styled.a`
 const TodaysDate = styled.p`
   font-size: 1.125rem;
   font-weight: var(--font-weight-medium);
-  margin-top: -1rem;
+  margin-top: -0.5rem;
 `;
 
 export default Logo;

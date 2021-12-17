@@ -81,6 +81,7 @@ const SubscribeLink = styled.a`
   text-decoration: underline;
   justify-self: center;
   font-size: 0.875rem;
+  margin-top: 0.5rem;
 `;
 
 const Side = styled.div`
