@@ -31,6 +31,8 @@ const Wrapper = styled.article`
 const Image = styled.img`
   display: block;
   width: 100%;
+  height: 320px;
+  object-fit: cover;
   margin-bottom: 12px;
 `;
 
@@ -50,16 +52,12 @@ const Abstract = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--line-clamp);
   overflow: hidden;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     -webkit-line-clamp: calc(
       var(--line-clamp) * 2
       );
   }
-  @media ${QUERIES.laptopAndUp} {
-    -webkit-line-clamp: calc(
-      var(--line-clamp) * 3
-      );
-  }
+
 `;
 
 const Location = styled.span`

@@ -21,15 +21,11 @@ const Wrapper = styled.article`
   display: flex;
   flex-direction: row-reverse;
    justify-content: space-between;
-   gap: 32px;
-   @media ${QUERIES.tabletAndUp} {
+   gap: 16px;
+   @media ${QUERIES.tabletOnly} {
      flex-direction: column;
      gap: 8px;
    }
-  @media ${QUERIES.laptopAndUp} {
-    flex-direction: row-reverse;
-    gap: 32px;
-  }
 `;
 
 const Avatar = styled.img`
