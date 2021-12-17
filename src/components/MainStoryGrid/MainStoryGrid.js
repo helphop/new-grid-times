@@ -76,17 +76,14 @@ const StoryList = styled.div`
 `;
 
 const StoryListOpinion = styled(StoryList)`
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     flex-direction: row;
-    gap: 8px;
+    gap: 32px;
+    > * {
+      flex: 1;
+    }
     > :not(:last-child) {
       border-bottom: none;
-    }
-  }
-  @media ${QUERIES.laptopAndUp} {
-    flex-direction: column;
-    > :not(:last-child) {
-      border-bottom: var(--border-gray);
     }
   }
 `;
