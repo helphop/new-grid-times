@@ -175,6 +175,13 @@ const Social = styled.div`
 const TopNavList = styled.ul`
   display: flex;
   gap: 16px;
+  @media ${QUERIES.laptopAndUp} {
+    > :nth-child(2){
+      overflow: hidden;
+      white-space: nowrap;
+      width: 5ch;
+    }
+  }
 `;
 
 const MainNavArea = styled.div`
@@ -189,7 +196,7 @@ const MainNavArea = styled.div`
     justify-content: space-between;
     text-align: left;
     > * {
-      flex-basis: 250px;
+      flex-basis: 220px;
     }
   }
 
