@@ -65,7 +65,7 @@ const MarketCards = styled.div`
   display: grid;
   gap: 16px;
   grid-template-columns:
-    repeat(auto-fit, minmax(150px, 1fr));
+    repeat(auto-fit, minmax(183px, 1fr));
 `;
 
 const SportsSection = styled.section`
@@ -75,16 +75,15 @@ const SportsSection = styled.section`
 const SportsStories = styled.div`
   display: grid;
   gap: 16px;
-    grid-template-columns:
+  grid-template-columns:
     repeat(auto-fit, minmax(150px, 1fr));
 
   @media ${QUERIES.tabletAndUp} {
     overflow: auto;
     padding-bottom: 1rem;
-    display: flex;
-    max-width: 100%;
+    grid-auto-flow: column;
+    grid-template-columns: revert;
     > * {
-      flex: 1;
       min-width: 220px;
     }
   }
