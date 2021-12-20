@@ -57,7 +57,7 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: none;
   }
 `;
@@ -69,7 +69,7 @@ const Row = styled(MaxWidthWrapper)`
 
 const SubscribeGroup = styled.div`
   display: none;
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     align-self: flex-end;
     display: grid;
   }
@@ -103,7 +103,7 @@ const ActionGroup = styled.div`
 
 const ActionGroupMain = styled(ActionGroup)`
   display: none;
-    @media ${QUERIES.desktopAndUp} {
+    @media ${QUERIES.laptopAndUp} {
      display: flex;
   }
 `;
